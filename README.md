@@ -12,6 +12,13 @@ This repository shares the code applied during the [YouTube Tutorial](https://yo
 
 ## My Notes
 
+Register form repo: https://github.com/gitdagray/react_register_form
+Login form: repo: https://github.com/gitdagray/react_login_form
+
+Thank you: https://github.com/gitdagray
+
+Source: https://github.com/gitdagray/react_register_form
+
 Backed end /register route is expecting user and pwd properties.
 So if named them something else in frontend, need to specify.
 
@@ -35,8 +42,16 @@ console.log(JSON.stringify(response))
 
 ## Users
 
+{"user": "alex1", "pwd": "1234"} Role:User: 2001, Editor:1984, Admin:5150
+{"user": "alex2", "pwd": "12345"} Role: User:2001
+{"user": "alex3", "pwd": "123456"} Role: User:2001
+
 alex4
 Alex1234!
 
 alex5
 Alex12345!
+
+## TODO
+
+Chapter 21 of beginners react course ... createContext

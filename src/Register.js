@@ -30,6 +30,7 @@ const Register = () => {
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
+  //set focus on input when Register component loads
   useEffect(() => {
     userRef.current.focus();
   }, []);
@@ -43,11 +44,13 @@ const Register = () => {
     setValidMatch(pwd === matchPwd);
   }, [pwd, matchPwd]);
 
+  //empty out error messages if user,pwd or matchPwd state changes
   useEffect(() => {
     setErrMsg("");
   }, [user, pwd, matchPwd]);
 
   const handleSubmit = async (e) => {
+    //defualt behaviour of form would reload the page.
     e.preventDefault();
     // if button enabled with JS hack
     const v1 = USER_REGEX.test(user);
@@ -57,6 +60,11 @@ const Register = () => {
       return;
     }
     try {
+      // Notes:
+      // REGISTER_URL will attach to base URL defined in axios.js
+      // baseURL: "http://localhost:3500"
+      // JSON.stringify({ user, pwd }) ... user,pwd state matche request properties expected by backend
+      // backend:   const { user, pwd } = req.body;
       const response = await axios.post(
         REGISTER_URL,
         JSON.stringify({ user, pwd }),
@@ -65,6 +73,7 @@ const Register = () => {
           withCredentials: true,
         }
       );
+      //Note: with axios do not need to convert response to json
       console.log(response?.data);
       console.log(response?.accessToken);
       console.log(JSON.stringify(response));
@@ -215,7 +224,7 @@ const Register = () => {
               <FontAwesomeIcon icon={faInfoCircle} />
               Must match the first password input field.
             </p>
-
+            {/* Do not add onClick as only button in form. Default when clicked is submit event.     */}
             <button
               disabled={!validName || !validPwd || !validMatch ? true : false}
             >
