@@ -14,6 +14,7 @@ This repository shares the code applied during the [YouTube Tutorial](https://yo
 
 Register form repo: https://github.com/gitdagray/react_register_form
 Login form: repo: https://github.com/gitdagray/react_login_form
+Protected Routes repo: https://github.com/gitdagray/react_protected_routes
 
 Thank you: https://github.com/gitdagray
 
