@@ -15,6 +15,7 @@ This repository shares the code applied during the [YouTube Tutorial](https://yo
 Register form repo: https://github.com/gitdagray/react_register_form
 Login form: repo: https://github.com/gitdagray/react_login_form
 Protected Routes repo: https://github.com/gitdagray/react_protected_routes
+JWT implementation repo: https://github.com/gitdagray/react_jwt_auth
 
 Thank you: https://github.com/gitdagray
 
@@ -52,6 +53,17 @@ Alex1234!
 
 alex5
 Alex12345!
+
+## JWT FrontEnd
+
+Upon authentication access and refresh token issue.
+Access token has short duration before expiration and refresh token has long duration.
+Frontend should store access token only in memory (current application state).
+Refresh need to have expiration. Refresh token should not be allowed to issued new refresh tokens.
+API will issue refresh tokens in an httpOnly cookie.
+API will verify access token with middleware everytime it is used to make a request.
+API will also verify refresh token and cross reference to refresh token in database.
+Storing refresh tokens in database will allow us to terminate refresh tokens if the user decides to logout.
 
 ## TODO
 
